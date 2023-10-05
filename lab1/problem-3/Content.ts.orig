@@ -3,10 +3,10 @@
 // add funny images to let the user know they have been pranked!
 const main = () => {
 
-const scheming :string[] = [
+    const scheming :string[] = [
                    "https://st4.depositphotos.com/1001911/21888/v/1600/depositphotos_218880448-stock-illustration-scheming-emoticon.jpg"
                    ,"https://i.kym-cdn.com/entries/icons/original/000/031/260/Screen_Shot_2019-09-24_at_4.22.16_PM.png"
-                   ,"https://media.tenor.com/IQcYOoTEuXYAAAAC/holy-moly.gif"
+                   ,"https://media.tenor.com/IQcYOoTEuXYAAAAC/holy-moly.gif" 
                    ,"https://media.tenor.com/PJCNWkE311YAAAAd/slowly-turning-emoji.gif"
                ]
     const imgs = document.getElementsByTagName("img")
@@ -25,15 +25,13 @@ const scheming :string[] = [
             for(let ii = 0; ii <  par.length; ii++) {
                 if (par[ii] === "l")
                     par[ii] = "I";
-                else if (par[ii] === "I")
+                else if (par[ii] === "I") 
                     par[ii] = "l";
             }
             ps[i].innerText = par.join('');
-            ps[i].style.color = (
-                "#" + Math.floor(Math.random() * 255).toString(16)  +
-                Math.floor(Math.random() * 255).toString(16)  +
-                Math.floor(Math.random() * 255).toString(16)
-            )
+            ps[i].style.color = ("#" + Math.floor(Math.random() * 255).toString(16)  + 
+            Math.floor(Math.random() * 255).toString(16)  + 
+            Math.floor(Math.random() * 255).toString(16))
         }
     }
 

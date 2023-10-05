@@ -14,6 +14,7 @@ var main = function () {
     }
     var p = document.getElementsByTagName("p");
     var lis = document.getElementsByTagName("li");
+    var h1s = document.getElementsByTagName("h1");
     var prank = function (ps) {
         for (var i = 0; i < ps.length; i++) {
             var par = ps[i].innerText.split('');
@@ -31,7 +32,6 @@ var main = function () {
     };
     prank(p);
     prank(lis);
-    var h1s = document.getElementsByTagName("h1");
     prank(h1s);
     var goof = function (hs) {
         for (var i = 0; i < hs.length; i++) {
