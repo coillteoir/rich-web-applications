@@ -12,8 +12,24 @@
   <div id="main">
     <label for="input_note">Enter your note here:</label>
     <input type="text" id="input_note" name="input_note">
-    <input type="button" onclick="add_note()" value=
-    "Add Note">
+    <select name="colours" id="colours">
+      <option value="red">
+        Red
+      </option>
+      <option value="blue">
+        Blue
+      </option>
+      <option value="green">
+        Green
+      </option>
+      <option value="pink">
+        Pink
+      </option>
+      <option value="white">
+        White
+      </option>
+    </select>
+    <input type="button" onclick="add_note()" value="Add Note">
     <ul id="notes"></ul>
   </div>
 </body>
