@@ -1,2 +1,2 @@
-*.orig
-*.bak
+**/*.orig
+**/*.bak
