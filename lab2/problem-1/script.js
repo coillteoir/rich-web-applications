@@ -20,6 +20,15 @@ var addToTable = function (contact) {
     newRow.appendChild(newPhone);
     newRow.appendChild(newEmail);
     table.appendChild(newRow);
+    table.childNodes.forEach(function (elm) {
+        var nodes = table.childNodes;
+        if (nodes.indexOf(elm) % 2 == 0) {
+            elm.style.backgroundColor = "white";
+        }
+        else {
+            elm.style.backgroundColor = "#f2f2f2";
+        }
+    });
 };
 var generateContact = function (form) {
     var inputData = Array.from(form.childNodes).filter(function (elm) { return elm.nodeName == "INPUT"; });

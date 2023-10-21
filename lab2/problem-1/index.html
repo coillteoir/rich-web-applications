@@ -6,13 +6,13 @@
   <script src="script.js"></script>
 </head>
 <body>
+    <div id="main">
 <h1>Phone Directory</h1>
 <form id="number_input" action="" method="GET">
-    Enter Details here!<br>
     <input type="text" name="fName">
     <input type="text" name="number">
     <input type="text" name="email">
-    <input type="button" name="submit" value="Submit" onClick="generateContact(this.form)">
+    <input type="button" name="submit" value="Add Contact" onClick="generateContact(this.form)">
 </form>
 <table id="contacts">
     <tr>
@@ -21,5 +21,6 @@
         <th>Email</th>
     </tr>
 </table>
+</div>
 </body>
 </html>
