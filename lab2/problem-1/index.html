@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Phone Directory</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
+</head>
+<body>
+<h1>Phone Directory</h1>
+<form id="number_input" action="" method="GET">
+    Enter Details here!<br>
+    <input type="text" name="fName">
+    <input type="text" name="number">
+    <input type="text" name="email">
+    <input type="button" name="submit" value="Submit" onClick="generateContact(this.form)">
+</form>
+<table id="contacts">
+    <tr>
+        <th>Name</th>
+        <th>Number</th>
+        <th>Email</th>
+    </tr>
+</table>
+</body>
+</html>
