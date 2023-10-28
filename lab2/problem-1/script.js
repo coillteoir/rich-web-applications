@@ -20,21 +20,19 @@ var addToTable = function (contact) {
     newRow.appendChild(newPhone);
     newRow.appendChild(newEmail);
     table.appendChild(newRow);
-    table.childNodes.forEach(function (elm) {
-        var nodes = table.childNodes;
-        if (nodes.indexOf(elm) % 2 == 0) {
-            elm.style.backgroundColor = "white";
-        }
-        else {
-            elm.style.backgroundColor = "#f2f2f2";
-        }
-    });
 };
 var generateContact = function (form) {
     var inputData = Array.from(form.childNodes).filter(function (elm) { return elm.nodeName == "INPUT"; });
     var name = inputData.find(function (x) { return x.name == "fName"; }).value;
     var number = inputData.find(function (x) { return x.name == "number"; }).value;
     var email = inputData.find(function (x) { return x.name == "email"; }).value;
-    console.log(name, number, email);
-    addToTable(new Contact(name, number, email));
+    var emailPattern = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+    var phoneNumberPattern = /^\d{10}$/;
+    console.log(phoneNumberPattern.test(number), emailPattern.test(email));
+    if (name === "" || !phoneNumberPattern.test(number) || !emailPattern.test(email)) {
+        alert("Invalid input");
+    }
+    else {
+        addToTable(new Contact(name, number, email));
+    }
 };
