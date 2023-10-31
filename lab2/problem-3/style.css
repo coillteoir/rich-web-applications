@@ -1,0 +1,27 @@
+html, body { width: 100%; height: 100%;}
+
+
+#profile > img {
+    height: auto;
+}
+
+#profile > div {
+    display: flex;
+    border: solid black 1px;
+}
+
+#repos {
+    overflow-y: scroll;
+}
+
+#repos > div {
+    display: flex;
+    border: solid black 1px;
+}
+
+#repos, #profile {
+  float: left;
+  visibility: hidden;
+  width: 50%;
+  height: 90%;
+}

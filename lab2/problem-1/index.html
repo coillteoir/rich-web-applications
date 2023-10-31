@@ -1,26 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta name="generator" content=
+  "HTML Tidy for HTML5 for Linux version 5.7.45">
   <title>Phone Directory</title>
   <link rel="stylesheet" href="style.css">
   <script src="script.js"></script>
 </head>
 <body>
-    <div id="main">
-<h1>Phone Directory</h1>
-<form id="number_input" action="" method="GET">
-    <input type="text" name="fName">
-    <input type="text" name="number">
-    <input type="text" name="email">
-    <input type="button" name="submit" value="Add Contact" onClick="generateContact(this.form)">
-</form>
-<table id="contacts">
-    <tr>
+  <div id="main">
+    <h1>Phone Directory</h1>
+    <form id="number_input" action="" method="get" name=
+    "number_input">
+      <input type="text" name="fName" placeholder="Contact Name">
+      <input type="text" name="number" placeholder="Phone Number">
+      <input type="text" name="email" placeholder="Email">
+      <input type="button" name="submit" value="Add Contact"
+      onclick="generateContact(this.form)">
+    </form>
+    <p>Search contact by mobile number:</p><input type="text" name=
+    "numsearch" onkeyup="searchNumber(this.value)">
+    <table id="contacts">
+      <tr>
         <th>Name</th>
         <th>Number</th>
         <th>Email</th>
-    </tr>
-</table>
-</div>
+      </tr>
+    </table>
+  </div>
 </body>
 </html>

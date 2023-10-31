@@ -26,21 +26,48 @@ const addToTable = (contact: Contact) => {
     newRow.appendChild(newName)
     newRow.appendChild(newPhone)
     newRow.appendChild(newEmail)
-    table.appendChild(newRow)
 
+    table.appendChild(newRow)
 }
 
 const generateContact : Function = (form : HTMLFormElement) => {
+
     const inputData = <Array<HTMLInputElement>> Array.from(form.childNodes).filter(
             (elm) => elm.nodeName == "INPUT"
-        )
+    )
     
-    const name = inputData.find(x => x.name == "fName").value
-    const number = inputData.find(x => x.name == "number").value
-    const email = inputData.find(x => x.name == "email").value
+    const name: string = inputData.find(x => x.name == "fName").value
+    const number: string = inputData.find(x => x.name == "number").value
+    const email: string = inputData.find(x => x.name == "email").value
 
-    console.log(name, number, email)
+    inputData.find(x => x.name == "fName").value = ""
+    inputData.find(x => x.name == "number").value = ""
+    inputData.find(x => x.name == "email").value = ""
 
+    const emailPattern = /^[A-Za-z0-9._%-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/
+    const phoneNumberPattern = /^\d{10}$/
 
-    addToTable(new Contact(name, number, email))
+    if(name === "" || !phoneNumberPattern.test(number) || !emailPattern.test(email)) {
+        alert("Invalid input")
+    } else {
+        addToTable(new Contact(name, number, email))
+    }
+}
+
+const searchNumber = (value: string) => {
+    let table = <HTMLTableElement> document.getElementById("contacts")
+    
+    let rows = <Array<HTMLTableRowElement>> Array.from(table.childNodes)
+
+    rows.slice(1).forEach(
+        (elm) => {
+            if(elm.cells && elm.cells[1]) {
+                if(elm.cells[1].innerText.includes(value)) {
+                    elm.style.visibility = "visible"
+                } else {
+                    elm.style.visibility = "hidden"
+                }
+            } 
+        }
+    )
 }
