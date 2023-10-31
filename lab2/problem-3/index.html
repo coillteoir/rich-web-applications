@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Github explorer</title>
+        <script src="script.js"></script>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div id="main">
+            <form id="searchForm">
+                <input id="unametext" type="text"></input>
+                <input type="button" name="submit" value="search" onClick="searchGithub()">
+            </form>
+            <div id = "profile">
+                <h3> User Profile </h3>
+                <img id="profilePic"></img>
+                <div id="name"><p id="nameText"></p></div>
+                <div id="username"><p id="unameText"></p></div>
+                <div id="email"><p id="emailText"></p></div>
+                <div id="location"><p id="locoText"></p></div>
+                <div id="gists"><p id="gistText"></p></div> 
+            </div>
+            <div id = "repos">
+            </div>
+            </div>
+        </div>
+    </body>
+</html>
