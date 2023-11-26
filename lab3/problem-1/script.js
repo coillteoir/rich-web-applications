@@ -2,7 +2,10 @@ const inputNote = document.getElementById("note");
 const notes = document.getElementById("notes");
 const colourSelect = document.getElementById("colours");
 
-const addNoteStream = rxjs.fromEvent(document.getElementById("submit"), "click");
+const addNoteStream = rxjs.fromEvent(
+  document.getElementById("submit"),
+  "click",
+);
 
 const noteCreatedStream = addNoteStream.pipe(
   rxjs.map(() => {
