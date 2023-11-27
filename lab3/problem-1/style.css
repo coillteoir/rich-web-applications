@@ -1,0 +1,36 @@
+html, body { height: 100%; width: 100%; background-color:#005500; }
+
+h1{
+    color: powderblue;
+    text-align: center;
+}
+
+li{
+    border: dotted black 1px;
+    width: 75%;
+    text-align: left;
+    margin:auto;
+}
+
+li > input{
+    display:none;
+    float: right;
+}
+
+li:hover > input{
+   display:inline; 
+}
+
+#main {
+    margin: auto;
+    width: 80%;
+    height: 100%;
+    background-color: powderblue;
+    border: solid black 1px;
+    text-align:center;
+}
+
+#main > ul {
+    display:inline;
+    float: none;
+}
