@@ -34,7 +34,7 @@ const noteCreatedStream = addNoteStream.pipe(
     const editSubject = new rxjs.Subject();
     editClickStream.subscribe(() => {
       const newString = prompt("Please edit your message", text);
-      editSubject.next(newString);
+      note.textContent = newString  
     });
 
     note.appendChild(editButton);
