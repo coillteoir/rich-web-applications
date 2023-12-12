@@ -3,8 +3,10 @@ import React from "react";
 export default function Note(props: {
   data: {
     id: number;
-    data: {text:string, colour:string}[];
-    setData: React.Dispatch<React.SetStateAction<{text:string,colour:string}[]>>;
+    data: { text: string; colour: string }[];
+    setData: React.Dispatch<
+      React.SetStateAction<{ text: string; colour: string }[]>
+    >;
   };
 }) {
   const properties = props.data;
@@ -14,7 +16,7 @@ export default function Note(props: {
       className=" border-2 border-black 
       rounded-lg
       w-auto"
-      style={{background: properties.data[properties.id].colour}}
+      style={{ background: properties.data[properties.id].colour }}
     >
       <span className="text-black">{properties.data[properties.id].text}</span>
       <div>
@@ -28,7 +30,8 @@ export default function Note(props: {
             newText !== "" && newText !== null
               ? properties.setData(
                   properties.data.map((x, i) => {
-                    if (i === properties.id) return {text: newText, colour:x.colour};
+                    if (i === properties.id)
+                      return { text: newText, colour: x.colour };
                     return x;
                   }),
                 )

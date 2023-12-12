@@ -14,13 +14,9 @@ function App() {
   ];
   const [inputText, setInputText] = React.useState<string>("");
 
-  const [data, setData] = React.useState<{ text: string; colour: string }[]>([
-    { text: "this", colour: colours[0] },
-    { text: "is", colour: colours[1] },
-    { text: "some", colour: colours[2] },
-    { text: "test", colour: colours[3] },
-    { text: "data", colour: colours[4] },
-  ]);
+  const [data, setData] = React.useState<{ text: string; colour: string }[]>(
+    [],
+  );
   const [colour, setColour] = React.useState<string>(colours[0]);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputText(e.target.value);
@@ -33,10 +29,10 @@ function App() {
       {userin}
       <button
         className="rounded"
-        style={{background: colour}}
+        style={{ background: colour }}
         onClick={() => {
           if (inputText.length !== 0) {
-            setData(data.concat({text:inputText,colour: colour}))
+            setData(data.concat({ text: inputText, colour: colour }));
           }
         }}
       >
@@ -48,7 +44,7 @@ function App() {
             className={"w-10 h-10"}
             style={{ background: x }}
             onClick={(e: any) => {
-                setColour(colours[i])
+              setColour(colours[i]);
             }}
           ></div>
         ))}
