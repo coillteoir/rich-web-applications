@@ -40,8 +40,6 @@ export default function Note(props: {
         <button
           className="bg-white rounded-lg px-8"
           onClick={() => {
-            const t = properties.data.filter((_, i) => i !== properties.id);
-            console.log(t);
             properties.setData(
               properties.data.filter((_, i) => i !== properties.id),
             );
