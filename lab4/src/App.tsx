@@ -24,11 +24,12 @@ function App() {
 
   const userin: any = <input type="text" onChange={handleChange} />;
   return (
-    <div className="bg-green-100 h-full">
-      <h1 className="text-3xl">To-Do App</h1>
+    <div className="bg-orange-400 h-full">
+      <h1 className="text-5xl">Rewrite the world in Rust</h1>
+      <h2 className="text-2xl">Choose a repo to rewrite in rust</h2>
       {userin}
       <button
-        className="rounded"
+        className="rounded-lg border-black border-2"
         style={{ background: colour }}
         onClick={() => {
           if (inputText.length !== 0) {
@@ -41,7 +42,7 @@ function App() {
       <div className="flex">
         {colours.map((x, i) => (
           <div
-            className={"w-10 h-10"}
+            className={"rounded-lg border-2 border-black w-10 h-10"}
             style={{ background: x }}
             onClick={(e: any) => {
               setColour(colours[i]);
