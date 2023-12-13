@@ -10,8 +10,9 @@ const getRepoData = (repo: string): void => {
     })
     .then((data) => {
       const toplang = Object.keys(data).sort((a: any, b: any) => b - a)[0];
-      repodata = { lang: toplang, lines: data[toplang] / 80 };
-    });
+      repodata = { lang: toplang, lines: data[toplang] / 40 };
+    })
+    .catch((error) => console.error(error));
 };
 
 export default function Note(props: {
@@ -35,8 +36,16 @@ export default function Note(props: {
       style={{ background: properties.data[properties.id].colour }}
     >
       <span className="text-black">
-        To rewrite {properties.data[properties.id].text} in rust, you'll need to
-        rewrite {repodata.lines} lines of {repodata.lang} in Rust!
+        {(() =>
+          repodata.lang !== ""
+            ? "To rewrite " +
+              properties.data[properties.id].text +
+              " in rust, you'll need to rewrite " +
+              repodata.lines +
+              " lines of " +
+              repodata.lang +
+              " in Rust!"
+            : "this repo does not exist but good luck")()}
       </span>
       <div>
         <button
@@ -49,8 +58,8 @@ export default function Note(props: {
             newText !== "" && newText !== null
               ? properties.setData(
                   properties.data.map((x, i) => {
-                    if (i === properties.id)
-                      return { text: newText, colour: x.colour };
+                    if (i === properties.id) getRepoData(newText);
+                    return { text: newText, colour: x.colour };
                     return x;
                   }),
                 )

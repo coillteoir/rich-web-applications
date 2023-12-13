@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="bg-orange-400 h-full">
       <h1 className="text-5xl">Rewrite the world in Rust</h1>
-      <h2 className="text-2xl">Choose a repo to rewrite in rust</h2>
+      <h2 className="text-2xl">Choose a github repo to rewrite in rust</h2>
       {userin}
       <button
         className="rounded-lg border-black border-2"
