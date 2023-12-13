@@ -45,7 +45,9 @@ export default function Note(props: {
               " lines of " +
               repodata.lang +
               " in Rust!"
-            : "this repo does not exist but good luck")()}
+            : "The repo  " +
+              properties.data[properties.id].text +
+              " does not exist but good luck")()}
       </span>
       <div>
         <button
